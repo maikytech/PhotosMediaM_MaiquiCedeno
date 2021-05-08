@@ -3,28 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		38B37075527F1B4253403349 /* Pods_PhotosMediaM_MaiquiCedeno.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4DDC2745DDFFCC073EDB75 /* Pods_PhotosMediaM_MaiquiCedeno.framework */; };
 		6572D3F62647336D00D9CC3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6572D3F52647336D00D9CC3D /* AppDelegate.swift */; };
-		6572D3F82647336D00D9CC3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6572D3F72647336D00D9CC3D /* SceneDelegate.swift */; };
 		6572D3FA2647336D00D9CC3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6572D3F92647336D00D9CC3D /* ViewController.swift */; };
 		6572D3FD2647336D00D9CC3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6572D3FB2647336D00D9CC3D /* Main.storyboard */; };
 		6572D3FF2647336E00D9CC3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6572D3FE2647336E00D9CC3D /* Assets.xcassets */; };
 		6572D4022647336E00D9CC3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6572D4002647336E00D9CC3D /* LaunchScreen.storyboard */; };
+		65C527A22647520000819219 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C527A12647520000819219 /* NetworkingProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6572D3F22647336D00D9CC3D /* PhotosMediaM_MaiquiCedeno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosMediaM_MaiquiCedeno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6572D3F52647336D00D9CC3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6572D3F72647336D00D9CC3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6572D3F92647336D00D9CC3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6572D3FC2647336D00D9CC3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6572D3FE2647336E00D9CC3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6572D4012647336E00D9CC3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6572D4032647336E00D9CC3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65C527A12647520000819219 /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
 		C8FC32D9ACBF8B29A567EB86 /* Pods-PhotosMediaM_MaiquiCedeno.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosMediaM_MaiquiCedeno.release.xcconfig"; path = "Target Support Files/Pods-PhotosMediaM_MaiquiCedeno/Pods-PhotosMediaM_MaiquiCedeno.release.xcconfig"; sourceTree = "<group>"; };
 		D778837F50E6139983E6A7F1 /* Pods-PhotosMediaM_MaiquiCedeno.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosMediaM_MaiquiCedeno.debug.xcconfig"; path = "Target Support Files/Pods-PhotosMediaM_MaiquiCedeno/Pods-PhotosMediaM_MaiquiCedeno.debug.xcconfig"; sourceTree = "<group>"; };
 		FE4DDC2745DDFFCC073EDB75 /* Pods_PhotosMediaM_MaiquiCedeno.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosMediaM_MaiquiCedeno.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +48,6 @@
 				D778837F50E6139983E6A7F1 /* Pods-PhotosMediaM_MaiquiCedeno.debug.xcconfig */,
 				C8FC32D9ACBF8B29A567EB86 /* Pods-PhotosMediaM_MaiquiCedeno.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,8 +72,8 @@
 		6572D3F42647336D00D9CC3D /* PhotosMediaM_MaiquiCedeno */ = {
 			isa = PBXGroup;
 			children = (
+				65C527A0264751B600819219 /* Network */,
 				6572D3F52647336D00D9CC3D /* AppDelegate.swift */,
-				6572D3F72647336D00D9CC3D /* SceneDelegate.swift */,
 				6572D3F92647336D00D9CC3D /* ViewController.swift */,
 				6572D3FB2647336D00D9CC3D /* Main.storyboard */,
 				6572D3FE2647336E00D9CC3D /* Assets.xcassets */,
@@ -82,6 +81,14 @@
 				6572D4032647336E00D9CC3D /* Info.plist */,
 			);
 			path = PhotosMediaM_MaiquiCedeno;
+			sourceTree = "<group>";
+		};
+		65C527A0264751B600819219 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				65C527A12647520000819219 /* NetworkingProvider.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		EA19349A2A6B99DF69B14687 /* Frameworks */ = {
@@ -208,7 +215,7 @@
 			files = (
 				6572D3FA2647336D00D9CC3D /* ViewController.swift in Sources */,
 				6572D3F62647336D00D9CC3D /* AppDelegate.swift in Sources */,
-				6572D3F82647336D00D9CC3D /* SceneDelegate.swift in Sources */,
+				65C527A22647520000819219 /* NetworkingProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +366,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YR8ENK43BV;
 				INFOPLIST_FILE = PhotosMediaM_MaiquiCedeno/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,6 +387,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YR8ENK43BV;
 				INFOPLIST_FILE = PhotosMediaM_MaiquiCedeno/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
