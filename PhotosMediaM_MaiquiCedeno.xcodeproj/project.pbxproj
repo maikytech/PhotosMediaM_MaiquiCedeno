@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38B37075527F1B4253403349 /* Pods_PhotosMediaM_MaiquiCedeno.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4DDC2745DDFFCC073EDB75 /* Pods_PhotosMediaM_MaiquiCedeno.framework */; };
 		6572D3F62647336D00D9CC3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6572D3F52647336D00D9CC3D /* AppDelegate.swift */; };
 		6572D3F82647336D00D9CC3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6572D3F72647336D00D9CC3D /* SceneDelegate.swift */; };
 		6572D3FA2647336D00D9CC3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6572D3F92647336D00D9CC3D /* ViewController.swift */; };
@@ -24,6 +25,9 @@
 		6572D3FE2647336E00D9CC3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6572D4012647336E00D9CC3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6572D4032647336E00D9CC3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8FC32D9ACBF8B29A567EB86 /* Pods-PhotosMediaM_MaiquiCedeno.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosMediaM_MaiquiCedeno.release.xcconfig"; path = "Target Support Files/Pods-PhotosMediaM_MaiquiCedeno/Pods-PhotosMediaM_MaiquiCedeno.release.xcconfig"; sourceTree = "<group>"; };
+		D778837F50E6139983E6A7F1 /* Pods-PhotosMediaM_MaiquiCedeno.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosMediaM_MaiquiCedeno.debug.xcconfig"; path = "Target Support Files/Pods-PhotosMediaM_MaiquiCedeno/Pods-PhotosMediaM_MaiquiCedeno.debug.xcconfig"; sourceTree = "<group>"; };
+		FE4DDC2745DDFFCC073EDB75 /* Pods_PhotosMediaM_MaiquiCedeno.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosMediaM_MaiquiCedeno.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B37075527F1B4253403349 /* Pods_PhotosMediaM_MaiquiCedeno.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46356E80B30D91A69E2ABCB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D778837F50E6139983E6A7F1 /* Pods-PhotosMediaM_MaiquiCedeno.debug.xcconfig */,
+				C8FC32D9ACBF8B29A567EB86 /* Pods-PhotosMediaM_MaiquiCedeno.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6572D3E92647336D00D9CC3D = {
 			isa = PBXGroup;
 			children = (
 				6572D3F42647336D00D9CC3D /* PhotosMediaM_MaiquiCedeno */,
 				6572D3F32647336D00D9CC3D /* Products */,
+				46356E80B30D91A69E2ABCB0 /* Pods */,
+				EA19349A2A6B99DF69B14687 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = PhotosMediaM_MaiquiCedeno;
 			sourceTree = "<group>";
 		};
+		EA19349A2A6B99DF69B14687 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE4DDC2745DDFFCC073EDB75 /* Pods_PhotosMediaM_MaiquiCedeno.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6572D4062647336E00D9CC3D /* Build configuration list for PBXNativeTarget "PhotosMediaM_MaiquiCedeno" */;
 			buildPhases = (
+				96236EF598E33A3CD64B75D5 /* [CP] Check Pods Manifest.lock */,
 				6572D3EE2647336D00D9CC3D /* Sources */,
 				6572D3EF2647336D00D9CC3D /* Frameworks */,
 				6572D3F02647336D00D9CC3D /* Resources */,
+				41577ACB74C874FD9738B92F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		41577ACB74C874FD9738B92F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotosMediaM_MaiquiCedeno/Pods-PhotosMediaM_MaiquiCedeno-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotosMediaM_MaiquiCedeno/Pods-PhotosMediaM_MaiquiCedeno-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotosMediaM_MaiquiCedeno/Pods-PhotosMediaM_MaiquiCedeno-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96236EF598E33A3CD64B75D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotosMediaM_MaiquiCedeno-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6572D3EE2647336D00D9CC3D /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		6572D4072647336E00D9CC3D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D778837F50E6139983E6A7F1 /* Pods-PhotosMediaM_MaiquiCedeno.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		6572D4082647336E00D9CC3D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8FC32D9ACBF8B29A567EB86 /* Pods-PhotosMediaM_MaiquiCedeno.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
