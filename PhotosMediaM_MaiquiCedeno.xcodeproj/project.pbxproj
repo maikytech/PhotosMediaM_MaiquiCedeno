@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		6572D3FF2647336E00D9CC3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6572D3FE2647336E00D9CC3D /* Assets.xcassets */; };
 		6572D4022647336E00D9CC3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6572D4002647336E00D9CC3D /* LaunchScreen.storyboard */; };
 		65C527A22647520000819219 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C527A12647520000819219 /* NetworkingProvider.swift */; };
+		65C527A626475F4A00819219 /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C527A526475F4A00819219 /* Albums.swift */; };
+		65C527CC26476BCF00819219 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 65C527CB26476BCF00819219 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,7 @@
 		6572D4012647336E00D9CC3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6572D4032647336E00D9CC3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65C527A12647520000819219 /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
+		65C527A526475F4A00819219 /* Albums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
 		C8FC32D9ACBF8B29A567EB86 /* Pods-PhotosMediaM_MaiquiCedeno.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosMediaM_MaiquiCedeno.release.xcconfig"; path = "Target Support Files/Pods-PhotosMediaM_MaiquiCedeno/Pods-PhotosMediaM_MaiquiCedeno.release.xcconfig"; sourceTree = "<group>"; };
 		D778837F50E6139983E6A7F1 /* Pods-PhotosMediaM_MaiquiCedeno.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosMediaM_MaiquiCedeno.debug.xcconfig"; path = "Target Support Files/Pods-PhotosMediaM_MaiquiCedeno/Pods-PhotosMediaM_MaiquiCedeno.debug.xcconfig"; sourceTree = "<group>"; };
 		FE4DDC2745DDFFCC073EDB75 /* Pods_PhotosMediaM_MaiquiCedeno.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosMediaM_MaiquiCedeno.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +39,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38B37075527F1B4253403349 /* Pods_PhotosMediaM_MaiquiCedeno.framework in Frameworks */,
+				65C527CC26476BCF00819219 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +76,7 @@
 		6572D3F42647336D00D9CC3D /* PhotosMediaM_MaiquiCedeno */ = {
 			isa = PBXGroup;
 			children = (
+				65C527A426475EF300819219 /* Models */,
 				65C527A0264751B600819219 /* Network */,
 				6572D3F52647336D00D9CC3D /* AppDelegate.swift */,
 				6572D3F92647336D00D9CC3D /* ViewController.swift */,
@@ -89,6 +94,14 @@
 				65C527A12647520000819219 /* NetworkingProvider.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		65C527A426475EF300819219 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				65C527A526475F4A00819219 /* Albums.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		EA19349A2A6B99DF69B14687 /* Frameworks */ = {
@@ -117,6 +130,9 @@
 			dependencies = (
 			);
 			name = PhotosMediaM_MaiquiCedeno;
+			packageProductDependencies = (
+				65C527CB26476BCF00819219 /* Alamofire */,
+			);
 			productName = PhotosMediaM_MaiquiCedeno;
 			productReference = 6572D3F22647336D00D9CC3D /* PhotosMediaM_MaiquiCedeno.app */;
 			productType = "com.apple.product-type.application";
@@ -144,6 +160,9 @@
 				Base,
 			);
 			mainGroup = 6572D3E92647336D00D9CC3D;
+			packageReferences = (
+				65C527CA26476BCF00819219 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 6572D3F32647336D00D9CC3D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -216,6 +235,7 @@
 				6572D3FA2647336D00D9CC3D /* ViewController.swift in Sources */,
 				6572D3F62647336D00D9CC3D /* AppDelegate.swift in Sources */,
 				65C527A22647520000819219 /* NetworkingProvider.swift in Sources */,
+				65C527A626475F4A00819219 /* Albums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +394,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.PosetoStudio.PhotosMediaM-MaiquiCedeno";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -395,7 +415,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.PosetoStudio.PhotosMediaM-MaiquiCedeno";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -421,6 +441,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		65C527CA26476BCF00819219 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		65C527CB26476BCF00819219 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65C527CA26476BCF00819219 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6572D3EA2647336D00D9CC3D /* Project object */;
 }
