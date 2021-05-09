@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		38B37075527F1B4253403349 /* Pods_PhotosMediaM_MaiquiCedeno.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE4DDC2745DDFFCC073EDB75 /* Pods_PhotosMediaM_MaiquiCedeno.framework */; };
+		653B6BD62648461800B23A61 /* AlbumsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653B6BD42648461800B23A61 /* AlbumsCollectionViewCell.swift */; };
+		653B6BD72648461800B23A61 /* AlbumsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 653B6BD52648461800B23A61 /* AlbumsCollectionViewCell.xib */; };
 		6572D3F62647336D00D9CC3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6572D3F52647336D00D9CC3D /* AppDelegate.swift */; };
 		6572D3FA2647336D00D9CC3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6572D3F92647336D00D9CC3D /* ViewController.swift */; };
 		6572D3FD2647336D00D9CC3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6572D3FB2647336D00D9CC3D /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		653B6BD42648461800B23A61 /* AlbumsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionViewCell.swift; sourceTree = "<group>"; };
+		653B6BD52648461800B23A61 /* AlbumsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumsCollectionViewCell.xib; sourceTree = "<group>"; };
 		6572D3F22647336D00D9CC3D /* PhotosMediaM_MaiquiCedeno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosMediaM_MaiquiCedeno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6572D3F52647336D00D9CC3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6572D3F92647336D00D9CC3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +59,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		653B6BD3264844FC00B23A61 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6572D3F52647336D00D9CC3D /* AppDelegate.swift */,
+				6572D3F92647336D00D9CC3D /* ViewController.swift */,
+				6572D3FB2647336D00D9CC3D /* Main.storyboard */,
+				6572D4002647336E00D9CC3D /* LaunchScreen.storyboard */,
+				653B6BD42648461800B23A61 /* AlbumsCollectionViewCell.swift */,
+				653B6BD52648461800B23A61 /* AlbumsCollectionViewCell.xib */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		6572D3E92647336D00D9CC3D = {
 			isa = PBXGroup;
 			children = (
@@ -76,13 +93,9 @@
 		6572D3F42647336D00D9CC3D /* PhotosMediaM_MaiquiCedeno */ = {
 			isa = PBXGroup;
 			children = (
-				65C527A426475EF300819219 /* Models */,
+				653B6BD3264844FC00B23A61 /* Common */,
 				65C527A0264751B600819219 /* Network */,
-				6572D3F52647336D00D9CC3D /* AppDelegate.swift */,
-				6572D3F92647336D00D9CC3D /* ViewController.swift */,
-				6572D3FB2647336D00D9CC3D /* Main.storyboard */,
 				6572D3FE2647336E00D9CC3D /* Assets.xcassets */,
-				6572D4002647336E00D9CC3D /* LaunchScreen.storyboard */,
 				6572D4032647336E00D9CC3D /* Info.plist */,
 			);
 			path = PhotosMediaM_MaiquiCedeno;
@@ -92,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				65C527A12647520000819219 /* NetworkingProvider.swift */,
+				65C527A426475EF300819219 /* Models */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -177,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653B6BD72648461800B23A61 /* AlbumsCollectionViewCell.xib in Resources */,
 				6572D4022647336E00D9CC3D /* LaunchScreen.storyboard in Resources */,
 				6572D3FF2647336E00D9CC3D /* Assets.xcassets in Resources */,
 				6572D3FD2647336D00D9CC3D /* Main.storyboard in Resources */,
@@ -233,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6572D3FA2647336D00D9CC3D /* ViewController.swift in Sources */,
+				653B6BD62648461800B23A61 /* AlbumsCollectionViewCell.swift in Sources */,
 				6572D3F62647336D00D9CC3D /* AppDelegate.swift in Sources */,
 				65C527A22647520000819219 /* NetworkingProvider.swift in Sources */,
 				65C527A626475F4A00819219 /* Albums.swift in Sources */,

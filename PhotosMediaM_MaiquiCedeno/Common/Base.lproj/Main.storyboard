@@ -24,19 +24,37 @@
                                     <action selector="getAlbumAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="93K-LS-JgG"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZNT-Co-uXU">
+                                <rect key="frame" x="0.0" y="190" width="414" height="672"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LFV-aL-cy2">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="I9d-YN-ebL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="4mE-Az-XjD"/>
+                            <constraint firstItem="ZNT-Co-uXU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JBo-66-Uwr"/>
+                            <constraint firstItem="ZNT-Co-uXU" firstAttribute="top" secondItem="I9d-YN-ebL" secondAttribute="bottom" constant="100" id="dLm-8P-9xx"/>
                             <constraint firstItem="I9d-YN-ebL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="f7T-Kj-gbN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZNT-Co-uXU" secondAttribute="trailing" id="mTL-j2-Lgy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZNT-Co-uXU" secondAttribute="bottom" id="nxK-Aw-c20"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I9d-YN-ebL" secondAttribute="trailing" constant="16" id="xDj-Gz-Vmh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="albumsCollectionView" destination="ZNT-Co-uXU" id="cpS-ms-fUk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="52"/>
+            <point key="canvasLocation" x="128.98550724637681" y="51.5625"/>
         </scene>
     </scenes>
     <resources>
