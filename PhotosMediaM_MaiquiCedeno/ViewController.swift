@@ -8,12 +8,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        getData()
     }
 
-
+    @IBAction func getAlbumAction(_ sender: Any) {
+        
+    }
+    
+    func getData() {
+        NetworkingProvider.shared.getAlbum(id: 2)
+    }
+    
 }
 

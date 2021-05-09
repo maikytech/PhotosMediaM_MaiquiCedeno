@@ -6,8 +6,7 @@ target 'PhotosMediaM_MaiquiCedeno' do
   use_frameworks!
   
   pod 'SVProgressHUD'
-  pod 'Alamofire'
-
+  
   # Pods for PhotosMediaM_MaiquiCedeno
 
 end
