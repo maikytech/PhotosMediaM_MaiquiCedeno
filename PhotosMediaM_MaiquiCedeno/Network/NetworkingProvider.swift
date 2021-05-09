@@ -16,16 +16,18 @@ final class NetworkingProvider {
     private let kBaseUrl = "https://jsonplaceholder.typicode.com/"
     private let kStatusOK = 200...300
     
-    func getAlbum(id: Int) {
+    
+    func getAlbum(sucess: @escaping(_ albums: [Album])->(), failure: @escaping(_ error: Error?)->()) {
         
-        let url = "\(kBaseUrl)albums/\(id)"
+        let url = "\(kBaseUrl)albums"
         
-        AF.request(url, method: .get).validate(statusCode: kStatusOK).responseDecodable (of: Album.self) { response  in
+        AF.request(url, method: .get).validate(statusCode: kStatusOK).responseDecodable (of: [Album].self) { response  in
             
-            if let album = response.value {
-                print(album)
+            if let albums = response.value {
+                sucess(albums)
             }else {
-                print(response.error ?? "No error")
+                failure(response.error)
+                
             }
         }
     }

@@ -9,21 +9,23 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    private var dataSource = [Album]()
+    
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        getData()
+        
     }
 
     @IBAction func getAlbumAction(_ sender: Any) {
-        
+        NetworkingProvider.shared.getAlbum { (albums) in
+            self.dataSource = albums
+            print(self.dataSource)
+        } failure: { (error) in
+            print(error.debugDescription)
+        }
     }
-    
-    func getData() {
-        NetworkingProvider.shared.getAlbum(id: 2)
-    }
-    
 }
 

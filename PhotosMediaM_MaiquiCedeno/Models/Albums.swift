@@ -7,9 +7,13 @@
 
 import Foundation
 
+//struct DataSource:Decodable {
+//    let albums:[Album]?
+//}
+
 struct Album: Decodable {
-    let userId: Int
-    let id: Int
-    let title: String
+    let userId: Int?
+    let id: Int?
+    let title: String?
 }
 
