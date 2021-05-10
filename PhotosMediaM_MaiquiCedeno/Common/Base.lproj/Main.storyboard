@@ -38,15 +38,10 @@
                             <constraint firstItem="ZNT-Co-uXU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="tfg-8t-blu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gSe-f9-fUp">
-                        <barButtonItem key="rightBarButtonItem" title="Photos" id="duz-7U-KUm">
-                            <connections>
-                                <segue destination="dt4-B9-ugU" kind="show" id="EwI-bN-X20"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="gSe-f9-fUp"/>
                     <connections>
                         <outlet property="albumsCollectionView" destination="ZNT-Co-uXU" id="URD-eo-ubf"/>
+                        <segue destination="dt4-B9-ugU" kind="show" identifier="goToPhotos" id="bI0-hg-Eqf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -71,6 +71,11 @@ extension ViewController: UICollectionViewDataSource {
 //MARK: - UICollectionViewDelegate
 extension ViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Se selecciono un album")
+        performSegue(withIdentifier: "goToPhotos", sender: nil)
+    }
+    
 }
 
 //MARK: - UICollectionViewDelegateFlowLayout

@@ -74,6 +74,10 @@ extension PhotosViewController: UICollectionViewDataSource {
 //MARK: - UICollectionViewDelegate
 extension PhotosViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Se selecciono una foto")
+    }
+    
 }
 
 //MARK: - UICollectionViewDelegateFlowLayout
