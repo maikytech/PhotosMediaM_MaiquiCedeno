@@ -18,6 +18,9 @@ class PhotosViewController: UIViewController {
     //MARK: - Private vars
     private let photoCellWith = UIScreen.main.bounds.width  / 2
     private var dataSourcePhotos = [Photo]()
+    private var photosByAlbum = [Photo]()
+    
+    public var albumID:Int = 0
     
     
     override func viewDidLoad() {
@@ -29,21 +32,37 @@ class PhotosViewController: UIViewController {
         photosCollectionView.delegate = self
         
         getPhotos()
+        
         photosCollectionView.register(UINib(nibName: "PhotosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "photoCell")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.photosCollectionView.reloadData()
+            self.photosInEachAlbum()
             SVProgressHUD.dismiss()
         }
+        
+        print("El valor de albumID es: \(albumID)")
     }
     
     private func getPhotos() {
         NetworkingProvider.shared.getPhotosResponse{ (photos) in
             self.dataSourcePhotos = photos
-            print(self.dataSourcePhotos)
         } failure: { (error) in
             print(error.debugDescription)
         }
+    }
+    
+    private func photosInEachAlbum() {
+        
+        print("La cantidad de pothos es : \(dataSourcePhotos.count)")
+        print("El albumID de dataSourcePhotos[0] es: \(dataSourcePhotos[0].albumId)")
+        for i in 0..<dataSourcePhotos.count {
+            if(dataSourcePhotos[i].albumId == 1) {
+                photosByAlbum.append(dataSourcePhotos[i])
+            }
+        }
+        
+        print("La cantidad de photos en este album es: \(photosByAlbum.count)")
     }
 }
 
@@ -55,7 +74,7 @@ extension PhotosViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        
-        return dataSourcePhotos.count
+        return photosByAlbum.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -63,9 +82,9 @@ extension PhotosViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotosCollectionViewCell
         
-        cell!.photoTitleLabel.text = dataSourcePhotos[indexPath.row].title
-        cell!.photoIDLabel.text = String(dataSourcePhotos[indexPath.row].id)
-        cell!.setupCellWithImage(url: dataSourcePhotos[indexPath.row].url)
+        cell!.photoTitleLabel.text = photosByAlbum[indexPath.row].title
+        cell!.photoIDLabel.text = String(photosByAlbum[indexPath.row].id)
+        cell!.setupCellWithImage(url: photosByAlbum[indexPath.row].thumbnailUrl)
         
         return cell!
     }

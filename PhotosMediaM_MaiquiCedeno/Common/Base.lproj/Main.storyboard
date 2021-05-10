@@ -51,7 +51,7 @@
         <!--Photos View Controller-->
         <scene sceneID="znm-Ru-PtU">
             <objects>
-                <viewController id="dt4-B9-ugU" customClass="PhotosViewController" customModule="PhotosMediaM_MaiquiCedeno" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotosST" id="dt4-B9-ugU" customClass="PhotosViewController" customModule="PhotosMediaM_MaiquiCedeno" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aWb-TZ-Qbr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

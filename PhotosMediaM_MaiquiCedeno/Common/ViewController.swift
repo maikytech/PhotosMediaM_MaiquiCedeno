@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     private var dataSourcePhotos = [Photo]()
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +44,19 @@ class ViewController: UIViewController {
             print(error.debugDescription)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToPhotos" {
+            if let vCDestiny = segue.destination as? PhotosViewController {
+                if let index = sender as? Int {
+                    let value = dataSource[index].id
+                    vCDestiny.albumID = value
+                }
+            }
+        }
+    }
+    
+    
 }
 
 //MARK: - UICollectionViewDataSource
@@ -72,8 +86,7 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Se selecciono un album")
-        performSegue(withIdentifier: "goToPhotos", sender: nil)
+        performSegue(withIdentifier: "goToPhotos", sender: indexPath.item)
     }
     
 }
