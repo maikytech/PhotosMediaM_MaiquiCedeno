@@ -6,6 +6,7 @@ target 'PhotosMediaM_MaiquiCedeno' do
   use_frameworks!
   
   pod 'SVProgressHUD'
+  pod 'Kingfisher'
   
   # Pods for PhotosMediaM_MaiquiCedeno
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PhotosCollectionViewCell: UICollectionViewCell {
 
@@ -26,6 +27,10 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         photoIDLabel.font = .boldSystemFont(ofSize: 16)
         photoIDLabel.textColor = .black
         
+    }
+    
+    func setupCellWithImage(url: String) {
+        photoImage.kf.setImage(with: URL(string: url))
     }
 
 }

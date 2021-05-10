@@ -7,6 +7,7 @@
 
 import UIKit
 import SVProgressHUD
+import Kingfisher
 
 class PhotosViewController: UIViewController {
 
@@ -64,6 +65,7 @@ extension PhotosViewController: UICollectionViewDataSource {
         
         cell!.photoTitleLabel.text = dataSourcePhotos[indexPath.row].title
         cell!.photoIDLabel.text = String(dataSourcePhotos[indexPath.row].id)
+        cell!.setupCellWithImage(url: dataSourcePhotos[indexPath.row].url)
         
         return cell!
     }
