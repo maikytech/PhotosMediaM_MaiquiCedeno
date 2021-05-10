@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="albumCell" id="gTV-IL-0wX" customClass="AlbumsCollectionViewCell" customModule="PhotosMediaM_MaiquiCedeno" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="220" height="220"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="220" height="220"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOc-OB-eEM">
+                        <rect key="frame" x="0.0" y="0.0" width="220" height="220"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconoAlbum" translatesAutoresizingMaskIntoConstraints="NO" id="Vf4-5H-fLW">
+                                <rect key="frame" x="0.0" y="0.0" width="220" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="4G5-XI-nqP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="albumID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pw-Su-Khv">
+                                <rect key="frame" x="20" y="190" width="180" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="albumTitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqi-6b-9KW">
+                                <rect key="frame" x="20" y="130" width="180" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uPv-jE-ASp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vf4-5H-fLW" firstAttribute="leading" secondItem="lOc-OB-eEM" secondAttribute="leading" id="7gh-Ye-IlK"/>
+                            <constraint firstItem="Tqi-6b-9KW" firstAttribute="leading" secondItem="lOc-OB-eEM" secondAttribute="leading" constant="20" id="99e-f1-Mej"/>
+                            <constraint firstItem="8Pw-Su-Khv" firstAttribute="leading" secondItem="lOc-OB-eEM" secondAttribute="leading" constant="20" id="GjF-lj-dy0"/>
+                            <constraint firstAttribute="trailing" secondItem="Vf4-5H-fLW" secondAttribute="trailing" id="JAi-K8-6Oe"/>
+                            <constraint firstItem="Vf4-5H-fLW" firstAttribute="top" secondItem="lOc-OB-eEM" secondAttribute="top" id="QZW-ov-rx3"/>
+                            <constraint firstItem="8Pw-Su-Khv" firstAttribute="top" secondItem="Tqi-6b-9KW" secondAttribute="bottom" constant="10" id="T1f-V7-f2l"/>
+                            <constraint firstItem="Tqi-6b-9KW" firstAttribute="top" secondItem="Vf4-5H-fLW" secondAttribute="bottom" constant="10" id="jYs-O9-a6Q"/>
+                            <constraint firstAttribute="trailing" secondItem="Tqi-6b-9KW" secondAttribute="trailing" constant="20" id="tea-qg-BYg"/>
+                            <constraint firstAttribute="trailing" secondItem="8Pw-Su-Khv" secondAttribute="trailing" constant="20" id="xzg-1e-VOh"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="lOc-OB-eEM" secondAttribute="trailing" id="9jQ-YD-3wm"/>
+                <constraint firstItem="lOc-OB-eEM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="GS2-CM-Yhe"/>
+                <constraint firstAttribute="bottom" secondItem="lOc-OB-eEM" secondAttribute="bottom" id="dqg-47-dSW"/>
+                <constraint firstItem="lOc-OB-eEM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qdc-zZ-CwR"/>
+            </constraints>
+            <size key="customSize" width="220" height="220"/>
+            <connections>
+                <outlet property="albumIDLabel" destination="8Pw-Su-Khv" id="rN5-U5-ibD"/>
+                <outlet property="albumLogoImage" destination="Vf4-5H-fLW" id="Zcl-zj-qGg"/>
+                <outlet property="albumTitleLabel" destination="Tqi-6b-9KW" id="WDU-Er-esS"/>
+            </connections>
+            <point key="canvasLocation" x="262" y="35"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="IconoAlbum" width="256" height="256"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

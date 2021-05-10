@@ -13,20 +13,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var albumsCollectionView: UICollectionView!
     
     //MARK: - Private vars
+    private let albumCellWith = UIScreen.main.bounds.width  / 2
     private var dataSource = [Album]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        albumsCollectionView.dataSource = self
         
+        albumsCollectionView.dataSource = self
+        albumsCollectionView.delegate = self
+        
+        getAlbums()
+        albumsCollectionView.register(UINib(nibName: "AlbumsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "albumCell")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.albumsCollectionView.reloadData()
+        }
     }
-
-    //MARK: - IBActions
-    @IBAction func getAlbumAction(_ sender: Any) {
-        NetworkingProvider.shared.getAlbum { (albums) in
+    
+    private func getAlbums() {
+        NetworkingProvider.shared.getAlbumsResponse{ (albums) in
             self.dataSource = albums
-            print(self.dataSource)
         } failure: { (error) in
             print(error.debugDescription)
         }
@@ -36,17 +43,35 @@ class ViewController: UIViewController {
 //MARK: - UICollectionViewDataSource
 extension ViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
+        1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        dataSource.count
+       
+        return dataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "albumCell", for: indexPath)
+        
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "albumCell", for: indexPath) as? AlbumsCollectionViewCell
+        
+        cell!.albumTitleLabel.text = dataSource[indexPath.row].title
+        cell!.albumIDLabel.text = String(dataSource[indexPath.row].id)
+        
+        return cell!
     }
-    
+}
+
+//MARK: - UICollectionViewDelegate
+extension ViewController: UICollectionViewDelegate {
     
 }
 
+//MARK: - UICollectionViewDelegateFlowLayout
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: albumCellWith, height: albumCellWith)
+    }
+}

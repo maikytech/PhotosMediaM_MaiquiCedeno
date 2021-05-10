@@ -17,7 +17,7 @@ final class NetworkingProvider {
     private let kStatusOK = 200...300
     
     
-    func getAlbum(sucess: @escaping(_ albums: [Album])->(), failure: @escaping(_ error: Error?)->()) {
+    func getAlbumsResponse(sucess: @escaping(_ albums: [Album])->(), failure: @escaping(_ error: Error?)->()) {
         
         let url = "\(kBaseUrl)albums"
         

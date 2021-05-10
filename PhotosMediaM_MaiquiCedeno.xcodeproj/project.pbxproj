@@ -59,6 +59,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		651BB4632648CB9A00DE4D4B /* Albums */ = {
+			isa = PBXGroup;
+			children = (
+				653B6BD42648461800B23A61 /* AlbumsCollectionViewCell.swift */,
+				653B6BD52648461800B23A61 /* AlbumsCollectionViewCell.xib */,
+			);
+			path = Albums;
+			sourceTree = "<group>";
+		};
 		653B6BD3264844FC00B23A61 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,8 +75,6 @@
 				6572D3F92647336D00D9CC3D /* ViewController.swift */,
 				6572D3FB2647336D00D9CC3D /* Main.storyboard */,
 				6572D4002647336E00D9CC3D /* LaunchScreen.storyboard */,
-				653B6BD42648461800B23A61 /* AlbumsCollectionViewCell.swift */,
-				653B6BD52648461800B23A61 /* AlbumsCollectionViewCell.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -93,6 +100,7 @@
 		6572D3F42647336D00D9CC3D /* PhotosMediaM_MaiquiCedeno */ = {
 			isa = PBXGroup;
 			children = (
+				651BB4632648CB9A00DE4D4B /* Albums */,
 				653B6BD3264844FC00B23A61 /* Common */,
 				65C527A0264751B600819219 /* Network */,
 				6572D3FE2647336E00D9CC3D /* Assets.xcassets */,
