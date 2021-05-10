@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ViewController: UIViewController {
     
@@ -15,10 +16,13 @@ class ViewController: UIViewController {
     //MARK: - Private vars
     private let albumCellWith = UIScreen.main.bounds.width  / 2
     private var dataSource = [Album]()
+    private var dataSourcePhotos = [Photo]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SVProgressHUD.show()
         
         albumsCollectionView.dataSource = self
         albumsCollectionView.delegate = self
@@ -28,6 +32,7 @@ class ViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.albumsCollectionView.reloadData()
+            SVProgressHUD.dismiss()
         }
     }
     

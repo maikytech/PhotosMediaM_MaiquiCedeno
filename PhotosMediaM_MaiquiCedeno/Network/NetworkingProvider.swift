@@ -31,5 +31,19 @@ final class NetworkingProvider {
             }
         }
     }
+    
+    func getPhotosResponse(sucess: @escaping(_ photos: [Photo])->(), failure: @escaping(_ error: Error?)->()) {
+        
+        let url = "\(kBaseUrl)photos"
+        
+        AF.request(url, method: .get).validate(statusCode: kStatusOK).responseDecodable (of: [Photo].self) { response  in
+            
+            if let photos = response.value {
+                sucess(photos)
+            }else {
+                failure(response.error)
+            }
+        }
+    }
 }
     
