@@ -18,8 +18,6 @@ class ViewController: UIViewController {
     private var dataSource = [Album]()
     private var dataSourcePhotos = [Photo]()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,8 +53,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    
 }
 
 //MARK: - UICollectionViewDataSource
@@ -86,9 +82,9 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         performSegue(withIdentifier: "goToPhotos", sender: indexPath.item)
     }
-    
 }
 
 //MARK: - UICollectionViewDelegateFlowLayout

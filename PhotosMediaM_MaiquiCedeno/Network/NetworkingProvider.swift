@@ -27,7 +27,6 @@ final class NetworkingProvider {
                 sucess(albums)
             }else {
                 failure(response.error)
-                
             }
         }
     }

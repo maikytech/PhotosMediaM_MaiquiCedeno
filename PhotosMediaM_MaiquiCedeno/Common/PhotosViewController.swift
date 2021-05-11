@@ -10,18 +10,20 @@ import SVProgressHUD
 import Kingfisher
 
 class PhotosViewController: UIViewController {
-
+    
     //MARK: - IBOulets
     
     @IBOutlet weak var photosCollectionView: UICollectionView!
     
-    //MARK: - Private vars
-    private let photoCellWith = UIScreen.main.bounds.width  / 2
-    private var dataSourcePhotos = [Photo]()
-    private var photosByAlbum = [Photo]()
+    //MARK: - Public vars
     
     public var albumID:Int = 0
     
+    //MARK: - Private vars
+    
+    private let photoCellWith = UIScreen.main.bounds.width  / 2
+    private var dataSourcePhotos = [Photo]()
+    private var photosByAlbum = [Photo]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +42,6 @@ class PhotosViewController: UIViewController {
             self.photosInEachAlbum()
             SVProgressHUD.dismiss()
         }
-        
-        print("El valor de albumID es: \(albumID)")
     }
     
     private func getPhotos() {
@@ -53,16 +53,23 @@ class PhotosViewController: UIViewController {
     }
     
     private func photosInEachAlbum() {
-        
-        print("La cantidad de pothos es : \(dataSourcePhotos.count)")
-        print("El albumID de dataSourcePhotos[0] es: \(dataSourcePhotos[0].albumId)")
         for i in 0..<dataSourcePhotos.count {
-            if(dataSourcePhotos[i].albumId == 1) {
+            if(dataSourcePhotos[i].albumId == albumID) {
                 photosByAlbum.append(dataSourcePhotos[i])
             }
         }
         
-        print("La cantidad de photos en este album es: \(photosByAlbum.count)")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToPhotoImage" {
+            if let vCDestiny = segue.destination as? PhotoImageViewController {
+                if let index = sender as? Int {
+                    let value = photosByAlbum[index].id
+                    vCDestiny.photoID = value
+                }
+            }
+        }
     }
 }
 
@@ -94,9 +101,9 @@ extension PhotosViewController: UICollectionViewDataSource {
 extension PhotosViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Se selecciono una foto")
+        
+        performSegue(withIdentifier: "goToPhotoImage", sender: indexPath.item)
     }
-    
 }
 
 //MARK: - UICollectionViewDelegateFlowLayout
