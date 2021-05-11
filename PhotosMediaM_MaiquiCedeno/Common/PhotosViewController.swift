@@ -7,36 +7,29 @@
 
 import UIKit
 import SVProgressHUD
-import Kingfisher
 
 class PhotosViewController: UIViewController {
     
     //MARK: - IBOulets
-    
     @IBOutlet weak var photosCollectionView: UICollectionView!
     
-    //MARK: - Public vars
-    
+    //MARK: - Public varS
     public var albumID:Int = 0
     
     //MARK: - Private vars
-    
     private let photoCellWith = UIScreen.main.bounds.width  / 2
     private var dataSourcePhotos = [Photo]()
     private var photosByAlbum = [Photo]()
     
+    //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
         SVProgressHUD.show()
-        
         photosCollectionView.dataSource = self
         photosCollectionView.delegate = self
-        
         getPhotos()
-        
         photosCollectionView.register(UINib(nibName: "PhotosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "photoCell")
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.photosCollectionView.reloadData()
             self.photosInEachAlbum()
@@ -44,6 +37,7 @@ class PhotosViewController: UIViewController {
         }
     }
     
+    //MARK: - Private Methods
     private func getPhotos() {
         NetworkingProvider.shared.getPhotosResponse{ (photos) in
             self.dataSourcePhotos = photos
@@ -58,7 +52,6 @@ class PhotosViewController: UIViewController {
                 photosByAlbum.append(dataSourcePhotos[i])
             }
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -86,9 +79,7 @@ extension PhotosViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotosCollectionViewCell
-        
         cell!.photoTitleLabel.text = photosByAlbum[indexPath.row].title
         cell!.photoIDLabel.text = String(photosByAlbum[indexPath.row].id)
         cell!.setupCellWithImage(url: photosByAlbum[indexPath.row].thumbnailUrl)

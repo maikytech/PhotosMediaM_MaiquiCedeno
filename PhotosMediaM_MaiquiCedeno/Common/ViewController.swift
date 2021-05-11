@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+import RevealingSplashView
 
 class ViewController: UIViewController {
     
@@ -14,25 +14,33 @@ class ViewController: UIViewController {
     @IBOutlet weak var albumsCollectionView: UICollectionView!
     
     //MARK: - Private vars
+    private let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "Logo_PosetoStudio")!, iconInitialSize: CGSize(width: 128, height: 128), backgroundColor: UIColor.white)
     private let albumCellWith = UIScreen.main.bounds.width  / 2
     private var dataSource = [Album]()
     private var dataSourcePhotos = [Photo]()
     
+    //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SVProgressHUD.show()
-        
+        self.launchScreenConfig(revealingSplashView: revealingSplashView)
+
         albumsCollectionView.dataSource = self
         albumsCollectionView.delegate = self
-        
         getAlbums()
         albumsCollectionView.register(UINib(nibName: "AlbumsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "albumCell")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.albumsCollectionView.reloadData()
-            SVProgressHUD.dismiss()
         }
+    }
+    
+    //MARK: - Private Methods
+    private func launchScreenConfig(revealingSplashView: RevealingSplashView) {
+        
+        self.view.addSubview(revealingSplashView)
+        self.revealingSplashView.animationType = SplashAnimationType.popAndZoomOut
+        self.revealingSplashView.startAnimation()
     }
     
     private func getAlbums() {
@@ -68,9 +76,7 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "albumCell", for: indexPath) as? AlbumsCollectionViewCell
-        
         cell!.albumTitleLabel.text = dataSource[indexPath.row].title
         cell!.albumIDLabel.text = String(dataSource[indexPath.row].id)
         

@@ -1,20 +1,24 @@
 PODS:
   - Kingfisher (4.10.1)
+  - RevealingSplashView (0.6.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Kingfisher
+  - RevealingSplashView
   - SVProgressHUD
 
 SPEC REPOS:
   trunk:
     - Kingfisher
+    - RevealingSplashView
     - SVProgressHUD
 
 SPEC CHECKSUMS:
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 1c9a0bf9411f9729bc54b3931c1cdac8ce26f271
+PODFILE CHECKSUM: 364a7ed0165d3181f78b9258bfba457ac1315faa
 
 COCOAPODS: 1.10.1

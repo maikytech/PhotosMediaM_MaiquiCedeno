@@ -7,6 +7,7 @@ target 'PhotosMediaM_MaiquiCedeno' do
   
   pod 'SVProgressHUD'
   pod 'Kingfisher'
+  pod 'RevealingSplashView'
   
   # Pods for PhotosMediaM_MaiquiCedeno
 

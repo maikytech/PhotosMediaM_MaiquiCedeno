@@ -7,6 +7,7 @@
 
 import UIKit
 import SVProgressHUD
+import Kingfisher
 
 class PhotoImageViewController: UIViewController {
     
@@ -22,7 +23,8 @@ class PhotoImageViewController: UIViewController {
     private var url = ""
     private var dataSourcePhotos = [Photo]()
     private var photoSelected = [Photo]()
-     
+    
+    //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +37,7 @@ class PhotoImageViewController: UIViewController {
         }
     }
     
+    //MARK: - Private Methods
     private func getPhotos() {
         NetworkingProvider.shared.getPhotosResponse{ (photos) in
             self.dataSourcePhotos = photos
@@ -47,7 +50,6 @@ class PhotoImageViewController: UIViewController {
         for i in 0..<dataSourcePhotos.count {
             if(dataSourcePhotos[i].id == photoID) {
                 photoSelected.append(dataSourcePhotos[i])
-                
             }
         }
     }
